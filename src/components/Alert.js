@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import AlertContext from '../context/alert/AlertContext';
 
 
-const Alert = ({ alert }) => {
-  if (!alert) return null;
+const Alert = () => {
+  const { alert, hide } = useContext(AlertContext);
+
+  if (!alert.visible) return null;
 
   return (
     <div className={ `alert alert-${alert.type || 'warning'} alert-dismissible fade show` } role="alert">
-      <strong>Attention!</strong>
-
-      { alert.text }
+      <strong>{ alert.text }</strong>
 
       <button
+        onClick={ () => hide() }
         type="button"
-        class="close"
+        className="close"
         data-dismiss="alert"
         aria-label="Close"
       ><span aria-hidden="true">&times;</span></button>
