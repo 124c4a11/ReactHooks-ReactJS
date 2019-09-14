@@ -1,17 +1,26 @@
 import React, { useState, useContext } from 'react';
 
 import AlertContext from '../context/alert/AlertContext';
+import FirebaseContext from '../context/firebase/FirebaseContext';
 
 
 const Form = () => {
   const [value, setValue] = useState('');
   const alert = useContext(AlertContext);
+  const firebase = useContext(FirebaseContext);
 
   const submitHandler = (e) => {
     e.preventDefault();
 
     if (value.trim()) {
-      alert.show('Note created!', 'success');
+      firebase.addNote(value.trim())
+        .then(() => {
+          alert.show('Note created!', 'success');
+        })
+        .catch(() => {
+          alert.show('Something went wrong!', 'danger');
+        });
+
       setValue('');
     } else {
       alert.show('Enter note text!');
