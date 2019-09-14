@@ -31,7 +31,15 @@ const FirebaseState = ({ children }) => {
 
     const res = await axios.get(`${dbUrl}/notes.json`);
 
-    console.log('fetch notes: ', res.data);
+    const payload = Object.keys(res.data).map((key) => ({
+      ...res.data[key],
+      id: key
+    }));
+
+    dispatch({
+      type: FETCH_NOTES,
+      payload
+    });
   };
 
   const addNote = async (title) => {

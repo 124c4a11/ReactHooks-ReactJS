@@ -12,7 +12,7 @@ const Notes = ({ notes }) => {
           >
             <div>
               <b>{ note.title }</b>
-              <small className="ml-4">{ new Date().toLocaleDateString() }</small>
+              <small className="ml-4">{ note.date }</small>
             </div>
 
             <button
