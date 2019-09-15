@@ -3,7 +3,7 @@ import React, { Fragment, useContext, useEffect } from 'react';
 import FirebaseContext from '../context/firebase/FirebaseContext';
 
 import Form from '../components/Form';
-import Notes from '../components/Notes';
+import Notes from '../components/Notes/Notes';
 import Loader from '../components/Loader';
 
 

@@ -1,0 +1,19 @@
+@keyframes hide {
+  0% { transform: translateX(0); }
+  30% {
+    transform: translateX(30px);
+    opacity: .7;
+  }
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+}
+
+.note-enter-active {
+  animation: hide .5s ease-in alternate-reverse;
+}
+
+.note-exit-active {
+  animation: hide .5s ease-out forwards;
+}
