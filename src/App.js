@@ -8,7 +8,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 
 import Navbar from './components/Navbar';
-import Alert  from './components/Alert';
+import Alert  from './components/Alert/Alert';
 
 
 function App() {

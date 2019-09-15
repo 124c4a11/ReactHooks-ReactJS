@@ -1,0 +1,7 @@
+.alert-enter,
+.alert-exit-active { opacity: 0; }
+
+.alert-enter-active,
+.alert-exit-active { transition: opacity .25s; }
+
+.alert-enter-active { opacity: 1; }
